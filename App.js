@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { Text, View } from 'react-native';
+import { Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import { Home, Plus } from 'lucide-react-native';
 import { styles } from './styles';
@@ -39,7 +39,10 @@ export default function App() {
         {/* App Bar */}
         <View style={styles.endSection}>
           <Home />
-          <Plus />
+          <TouchableOpacity onPress={addMealPressHandler}>
+            <Plus />
+          </TouchableOpacity>
+          
 
         </View>
 
