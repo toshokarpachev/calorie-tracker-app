@@ -11,6 +11,10 @@ import { useState } from 'react';
 export default function App() {
 
   const [showAddMeal, setShowAddMeal] = useState(false);
+  const addMealPressHandler = () => {
+    setShowAddMeal(true);
+
+  };
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
@@ -26,12 +30,12 @@ export default function App() {
 
         </View>
         {/* Meal Section */}
-        <MealSection/>
+        <MealSection onAddMeal={addMealPressHandler} />
 
         {/* Add Meal Modal */}
-        {/* Moje da se izpolzva i tova {showAddMeal && <AddMeal />}*/}
-        <AddMeal visible={showAddMeal}/>
-       
+        {showAddMeal && <AddMeal onClose = {() => setShowAddMeal(false)}/>}
+        {/*<AddMeal visible={showAddMeal} />*/}
+
         {/* App Bar */}
         <View style={styles.endSection}>
           <Home />

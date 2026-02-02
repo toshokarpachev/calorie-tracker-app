@@ -2,9 +2,12 @@ import { Modal, Text } from "react-native";
 
 export default function AddMeal({
     visible,
+    onClose,
 }){
     return (
-        <Modal visible={visible}>
+        <Modal 
+        visible={visible}
+        onRequestClose={onClose}>
             <Text>Add Meals</Text>
         </Modal>
 
